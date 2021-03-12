@@ -12,7 +12,7 @@ export class RequestLogInterceptor implements HttpInterceptor {
 		.set("GET", RequestTypes.GET)
 		.set("PUT", RequestTypes.PUT)
 		.set("POST", RequestTypes.POST)
-		.set("DELETE", RequestTypes.DELETE)
+		.set("DELETE", RequestTypes.DELETE);
 
 	constructor(private readonly rlService: RequestLogService) { }
 

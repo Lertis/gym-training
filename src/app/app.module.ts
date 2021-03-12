@@ -6,6 +6,9 @@ import { StoreModule } from "@ngrx/store";
 import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 
 import { AppRoutingModule } from "./app-routing.module";
+import { MaterialModule } from "./shared/modules/material.module";
+import { FormFieldsModule } from "./shared/form-fields/form-fields.module";
+
 import { AppComponent } from "./app.component";
 
 import { ApiService } from "../app/shared/services/api.service";
@@ -30,15 +33,17 @@ import { environment } from "../environments/environment";
 			maxAge: 25,
 			logOnly: environment.production
 		}),
+		MaterialModule,
+		FormFieldsModule
 	],
 	providers: [
 		ApiService,
 		RequestLogService,
 		{
-      provide: HTTP_INTERCEPTORS,
-      useClass: RequestLogInterceptor,
-      multi: true
-    }
+			provide: HTTP_INTERCEPTORS,
+			useClass: RequestLogInterceptor,
+			multi: true
+		}
 	],
 	bootstrap: [AppComponent]
 })

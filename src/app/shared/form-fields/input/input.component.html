@@ -1,0 +1,5 @@
+<mat-form-field>
+	<input matInput="" [type]="filedType" placeholder="{{ placeholder }}" [formControl]="valueControl"
+		[readonly]="readOnlyMode" [maxLength]="maxLength" [attr.aria-label]="placeholder" />
+	<mat-error *ngIf="showErrorIfNeeded">{{ errorMessage }}</mat-error>
+</mat-form-field>

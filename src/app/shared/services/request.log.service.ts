@@ -9,7 +9,7 @@ export class RequestLogService {
 	constructor(private readonly store: Store<AppState>) { }
 
 	addRequestIntoLog(requestInfo: IRequestLog): void {
-		this.store.dispatch(addRequestLog({ ...requestInfo }))
+		this.store.dispatch(addRequestLog({ ...requestInfo }));
 	}
 
 }

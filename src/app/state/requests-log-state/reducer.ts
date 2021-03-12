@@ -12,6 +12,6 @@ const featureReducer = createReducer(
 	})
 );
 
-export function requestLogReducer(state: IRequestsLoQueueState | undefined, action: Action) {
+export function requestLogReducer(state: IRequestsLoQueueState | undefined, action: Action): IRequestsLoQueueState {
 	return featureReducer(state, action);
 }
