@@ -29,7 +29,7 @@ export class InputComponent
 	@Input() filedType: InputTypes = InputTypes.Text;
 	@Input() readOnlyMode = false;
 	@Input() showErrorIfNeeded = true;
-	@Input() errorMessage = "Invalid Number";
+	@Input() errorMessage = "Field is required";
 
 	constructor() {
 		super();

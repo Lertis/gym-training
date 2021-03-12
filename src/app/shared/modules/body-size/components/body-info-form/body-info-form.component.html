@@ -1,1 +1,44 @@
-<p>body-info-form works!</p>
+<mat-card>
+	<mat-card-content>
+		<form class="form" [formGroup]="bodySizeFom">
+			<div class="form-item">
+				<gym-input formControlName="leftArmBizeps" [filedType]="fieldsType.Number"></gym-input>
+			</div>
+			<div class="form-item">
+				<gym-input formControlName="leftLegThigh" [filedType]="fieldsType.Number"></gym-input>
+			</div>
+			<div class="form-item">
+				<gym-input formControlName="leftLegCalf" [filedType]="fieldsType.Number"></gym-input>
+			</div>
+			<div class="form-item">
+				<gym-input formControlName="rightArmBizeps" [filedType]="fieldsType.Number"></gym-input>
+			</div>
+			<div class="form-item">
+				<gym-input formControlName="rightLegThigh" [filedType]="fieldsType.Number"></gym-input>
+			</div>
+			<div class="form-item">
+				<gym-input formControlName="rightLegCalf" [filedType]="fieldsType.Number"></gym-input>
+			</div>
+			<div class="form-item">
+				<gym-input formControlName="chest" [filedType]="fieldsType.Number"></gym-input>
+			</div>
+			<div class="form-item">
+				<gym-input formControlName="waist" [filedType]="fieldsType.Number"></gym-input>
+			</div>
+			<div class="form-item">
+				<gym-datepicker formControlName="date"></gym-datepicker>
+			</div>
+		</form>
+	</mat-card-content>
+	<mat-card-actions>
+		<div class="actions">
+			<div class="actions-btn" matTooltipShowDelay="300" matTooltipHideDelay="300" matTooltip="{{ tooltip }}"
+				[matTooltipDisabled]="!buttonUpdateDisabled">
+				<button mat-raised-button [disabled]="buttonUpdateDisabled" (click)="update()">
+					Update
+				</button>
+			</div>
+			<button mat-raised-button (click)="cancel()" attr.aria-label="{{ 'Cancel' }}">Cancel</button>
+		</div>
+	</mat-card-actions>
+</mat-card>
