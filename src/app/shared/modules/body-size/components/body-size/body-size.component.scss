@@ -1,0 +1,40 @@
+@mixin commonGridConfig {
+	display: grid;
+	gap: 0.5em 0.5em;
+	grid-column-gap: 0.5em;
+	grid-row-gap: 0.5em;
+}
+
+.grid-container {
+	@include commonGridConfig();
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(4, 1fr);
+  grid-template-areas:
+		". . . ."
+		". . . ."
+		". . . ."
+		". . . .";
+}
+
+@media screen and (max-width: 800px) {
+	.grid-container {
+		@include commonGridConfig();
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(3, 1fr);
+		grid-template-areas:
+		". . ."
+		". . ."
+		". . .";
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.grid-container {
+		@include commonGridConfig();
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		grid-template-areas:
+		". ."
+		". .";
+	}
+}
